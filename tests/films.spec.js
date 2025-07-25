@@ -292,11 +292,51 @@ describe('Function "orderByYear"', () => {
 
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
+// Exercise 6
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
+  });
+
+  it('should return a number', () => {
+    const sample = [{ genre: ['Drama'], score: 8 }];
+    expect(typeof moviesAverageByCategory(sample, 'Drama')).toBe('number');
+  });
+
+  it('should return 0 if no movies match the category', () => {
+    const sample = [
+      { genre: ['Drama'], score: 8 },
+      { genre: ['Crime'], score: 9 }
+    ];
+    expect(moviesAverageByCategory(sample, 'Fantasy')).toBe(0);
+  });
+
+  it('should return the average score of Drama movies', () => {
+    const sample = [
+      { genre: ['Drama'], score: 8 },
+      { genre: ['Drama', 'Crime'], score: 9 }
+    ];
+    expect(moviesAverageByCategory(sample, 'Drama')).toBe(8.5);
+  });
+
+  it('should return the correct average for Comedy', () => {
+    const sample = [
+      { genre: ['Comedy'], score: 7 },
+      { genre: ['Comedy'], score: 9 }
+    ];
+    expect(moviesAverageByCategory(sample, 'Comedy')).toBe(8);
+  });
+
+  it('should ignore movies without the category', () => {
+    const sample = [
+      { genre: ['Drama'], score: 8 },
+      { genre: ['Action'], score: 6 },
+      { genre: ['Drama'], score: 10 }
+    ];
+    expect(moviesAverageByCategory(sample, 'Drama')).toBe(9);
   });
 });
+
 
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
