@@ -1,86 +1,62 @@
-# Sprint 3 IT Academy | Video management tool
 
-## Introduction
+# 🎬 SPRINT 3 – Movie Data Processing with JavaScript & Jest
 
-A company in the audiovisual sector has asked us for a web application that will allow their employees to quickly find movies from a large database they have, since the process is currently done manually.
+This repository is part of the IT Academy Bootcamp and corresponds to **Sprint 3**, focused on mastering JavaScript array methods and unit testing with **Jest**.
 
-You will be in charge of setting up the core of the application: all the logic of filtering and sorting of movies. You have 2 weeks to finish, which is how long this sprint lasts.
+---
 
-<br>
+## 🧰 Required Software
 
-## Requirements
+To run and complete the project, the following tools are required:
 
+- [Node.js](https://nodejs.org/)
+- [Jest](https://jestjs.io/) – for automated testing
+- [Jest HTML Reporter](https://www.npmjs.com/package/jest-html-reporter) – to visualize test results in the browser
 
-1. Clone this repo
-```bash
-$ git clone https://github.com/IT-Academy-BCN/starter-code-frontend-sprint-3-movies
-```
-
-2. Unlink your repo from the itacademy repository
-```bash
-$ git remote rm origin
-```
-
-3. Link your repo to the repository you have to create in your github account
-```bash
-$ git remote add origin <your repo name!>
-```
-
-<br>
-
-## Submission
-
-1. Upon completion, run the following commands:
+### 🔧 Installation
 
 ```bash
-$ git add .
-$ git commit -m "Sprint Solution"
-$ git push origin master
+npm install
+npm install --save-dev jest jest-html-reporter
 ```
 
-2. Create Pull Request.
+🧪 Methodology
+This sprint follows the principle of "programming to satisfy tests", where each function is implemented to pass the predefined test suite (films.spec.js). Console output is avoided in favor of test validation.
+All functions are designed with:
+✅ Single Responsibility Principle
+✅ Readable and maintainable code
+✅ Efficient use of array methods
 
-3. Upload the link to the virtual campus so that your mentor can correct it and give you feedback.
+🔀 Branch Workflow
+A structured Git workflow has been followed using feature-based branches:
+Branch Name	Purpose
+main	Final, stable version of the sprint
+developer	Active development and integration testing
+feature/level1	Implementation of mandatory exercises
+feature/level2	Implementation of optional exercise 7
+feature/level3	Implementation of optional exercise 8
 
+💻 Technologies Used
+JavaScript (ES6)
+Node.js
+Jest (unit testing)
+Git & GitHub (version control)
 
+📚 Exercises Overview
+✅ Level 1 – Mandatory Exercises
+Function	Description
+getAllDirectors(movies)	Returns an array of all directors.
+getMoviesFromDirector(movies, director)	Filters movies by a given director.
+moviesAverageOfDirector(movies, director)	Returns the average score of a director’s films.
+orderAlphabetically(movies)	Returns the first 20 movie titles sorted alphabetically.
+orderByYear(movies)	Returns movies sorted by year and title.
+🧩 Level 2 – Optional (Exercise 7)
+Function	Description
+moviesAverageByCategory(movies, category)	Calculates average score for a specific genre.
+🚀 Level 3 – Optional (Exercise 8)
+Function	Description
+hoursToMinutes(movies)	Converts movie duration to total minutes.
+bestFilmOfYear(movies, year)	Returns the highest-rated movie of a specific year using .reduce() for optimal performance.
+✅ All tests from the Jest suite have been successfully passed, including optional exercises.
 
-<br>
-
-## Introduction
-
-The statement of the exercise is available on the virtual campus.
-
-<br>
-
-## Tests!
-
-
-```shell
-$ npm install
-$ npm run test:watch
-```
-
-And last, open the generated `test-results.html` file with the "Live Server" VSCode extension to see test results.
-
-Apart from the statement, you will know exactly what you are asked to do by looking at the file `tests/films.spec.js`, all tests are already defined here!
-
-<br>
-
-## Instructions
-
-You have the following indications from the frontend responsible:
-
-- It is mandatory to implement all loops in ES6 (using map, reduce, filter and sort to manipulate arrays).
-
-- As at the moment we don't consume data from a server using an API, we will work with data from the src/data.js archive. For the moment we will implement the logic using
-an array of information about 250 movies.
-
-- The implementation is about processing this array of movies, to display it as requested in each exercise.
-
-- The logic to implement will be placed in the src/films.js file.
-
-- You don't need to show the result of each function on the screen. Your goal is to pass the tests.  More information on how to program oriented to pass tests at the end of the document.
-
-- Don't forget to include the capture of the test results in the virtual campus.
-
-
+Feel free to clone, explore, and test the project. Happy coding! 🎉
