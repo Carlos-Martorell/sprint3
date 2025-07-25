@@ -1,16 +1,16 @@
-// Exercise 1: Get the array of all directors.
+
 const getAllDirectors = (array) => {
   let result =  array.map((movie) => movie.director);
   return result;
 }
 
-// Exercise 2: Get the films of a certain director
+
 const getMoviesFromDirector = (array, director) => {
     const result = array.filter(film => film.director === director)
   return result;
   }
 
-// Exercise 3: Calculate the average of the films of a given director.
+
 const moviesAverageOfDirector = (array, director) => {
   const moviesByDirector = getMoviesFromDirector(array, director);
   if (moviesByDirector.length === 0) return 0;
@@ -21,7 +21,6 @@ const moviesAverageOfDirector = (array, director) => {
 };
 
 
-// Exercise 4:  Alphabetic order by title 
 
   
   function orderAlphabetically(array) {
@@ -33,7 +32,7 @@ const moviesAverageOfDirector = (array, director) => {
 
 
 
-// Exercise 5: Order by year, ascending
+
 
   function orderByYear(array) {
     const clonedArray = [...array];
@@ -50,7 +49,7 @@ const moviesAverageOfDirector = (array, director) => {
 
 }
 
-// Exercise 6: Calculate the average of the movies in a category
+
 function moviesAverageByCategory(movies, category) {
   const filtered = movies.filter(movie => movie.genre.includes(category));
 
@@ -61,7 +60,7 @@ function moviesAverageByCategory(movies, category) {
 }
 
 
-// Exercise 7: Modify the duration of movies to minutes
+
 
   function hoursToMinutes(array) {
     return array.map(movie => {
@@ -70,13 +69,13 @@ function moviesAverageByCategory(movies, category) {
       let hours = 0;
       let minutes = 0;
   
-      // Extraer horas si existen
+     
       if (durationStr.includes('h')) {
         const hMatch = durationStr.match(/(\d+)h/);
         if (hMatch) hours = parseInt(hMatch[1]);
       }
   
-      // Extraer minutos si existen
+     
       if (durationStr.includes('min')) {
         const mMatch = durationStr.match(/(\d+)min/);
         if (mMatch) minutes = parseInt(mMatch[1]);
@@ -84,7 +83,7 @@ function moviesAverageByCategory(movies, category) {
   
       const totalMinutes = hours * 60 + minutes;
   
-      // Retornar una nueva película con duración modificada
+      
       return {
         ...movie,
         duration: totalMinutes
@@ -93,11 +92,21 @@ function moviesAverageByCategory(movies, category) {
   }
 
 
-// Exercise 8: Get the best film of a year
+
+function bestFilmOfYear(movies, year) {
+  const moviesOfYear = movies.filter(movie => movie.year === year);
+
+  if (moviesOfYear.length === 0) return [];
+
+  const bestMovie = moviesOfYear.reduce((best, current) => {
+    return current.score > best.score ? current : best;
+  });
+
+  return [bestMovie];
+}
 
 
-// The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
+
 if (typeof module !== 'undefined') {
   module.exports = {
     getAllDirectors,

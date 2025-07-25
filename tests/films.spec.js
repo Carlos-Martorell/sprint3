@@ -291,8 +291,7 @@ describe('Function "orderByYear"', () => {
 });
 
 // Exercise 6
-// YOUR CODE HERE. Test moviesAverageByCategory()
-// Exercise 6
+
 describe('Function "moviesAverageByCategory"', () => {
   it('should be declared', () => {
     expect(typeof moviesAverageByCategory).toBe('function');
